@@ -1,9 +1,9 @@
 package SlidingWindow;
 
 public class SubarraySumEqualToK {
-    public static int subarraySum(int[] nums, int k) {
+    public static void subarraySum(int[] nums, int k) {
         int si = 0, ei = 0, sum = 0, count = 0;
-
+        System.out.println(count);
         while (ei < nums.length) {
             sum += nums[ei];
             while (sum > k && si <= ei) {
@@ -13,17 +13,15 @@ public class SubarraySumEqualToK {
             if (sum == k) {
                 count++;
             }
-
             ei++;
         }
-
-        return count;
+        System.out.println(count);
+        //return count;
     }
     public static void main(String[] args) {
-        int[] nums={1,2,3};
-        int k=3;
-        int ans=subarraySum(nums,k);
-        System.out.println(ans);
-        
+        int[] nums={1};
+        int k=0;
+        subarraySum(nums,k);
+        //System.out.println(ans);        
     }
 }
