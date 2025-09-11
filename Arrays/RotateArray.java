@@ -9,17 +9,36 @@ public class RotateArray {
             System.out.println(arr[i]+" ");
         }
     }
+    // public static void rotate(int[] arr,int k){
+    //     int n=arr.length;
+    //     k=k%n;
+        
+    //     for(int j=1;j<=k;j++){
+    //         int item=arr[n-1];
+    //         for(int i=n-2;i>=0;i--){
+    //         arr[i+1]=arr[i];
+    //     }
+    //     arr[0]=item;
+    //     }
+        
+    // }
+
     public static void rotate(int[] arr,int k){
         int n=arr.length;
         k=k%n;
-        
-        for(int j=1;j<=k;j++){
-            int item=arr[n-1];
-            for(int i=n-2;i>=0;i--){
-            arr[i+1]=arr[i];
+        reverse(arr, 0, n-1);
+        reverse(arr, 0, k-1);
+        reverse(arr, k, n-1);
+
+    }
+
+    public static void reverse(int[] arr,int i , int j){
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
         }
-        arr[0]=item;
-        }
-        
     }
 }
